@@ -1,0 +1,29 @@
+.cards-container{
+    background-color: rgb(253, 253, 253);
+    height: fit-content;
+}
+.card{
+    min-width: 10rem;
+    max-width: 18rem;
+    height: 26rem;
+}
+.card-img{
+    min-height: 16rem;
+    max-height: 18rem;
+}
+.cards{
+    width: 80%;
+}
+.spin{
+    width: 4rem;
+    height: 4rem;
+}
+aside{
+    width: 18%;
+}
+
+@media(max-width: 800px){
+    aside{
+        width: 100%;
+    }
+}
