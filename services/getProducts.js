@@ -11,7 +11,9 @@ export const getAllProducts = async (path = "") => {
         while($cards.firstChild){
             $cards.removeChild($cards.firstChild);
         }  
-        
+        if(products.length === 0){
+            $cards.insertAdjacentHTML("beforeend", `<h6>No existen productos con ese nombre.</h6>`);
+        }
         products.forEach(el => {
             const $newCard = document.createElement("div");
             $newCard.setAttribute("class", "card mb-4");
@@ -31,6 +33,7 @@ export const getAllProducts = async (path = "") => {
         });
 
     } catch (error) {
+        console.log(error);
         let message = error.statusText || "No se cargaron los productos";
         $cards.insertAdjacentHTML("beforeend", `<h6>${message}</h6>`);
     }
