@@ -1,6 +1,6 @@
 import { getAllCategories } from "./services/getCategories.js";
-import { getAllProducts, getProductByName } from "./services/getProducts.js";
-import { d, $searcher, $categories } from "./services/variables.js";
+import { getAllProducts } from "./services/getProducts.js";
+import { d, $searcher } from "./services/variables.js";
 
 
 d.addEventListener("DOMContentLoaded", getAllCategories);
@@ -11,7 +11,7 @@ d.addEventListener("submit", async e => {
         e.preventDefault();
 
         if(e.target.name.value){
-            getProductByName(e.target.name.value);
+            getAllProducts(`name/${e.target.name.value}`);
         }
     }
 });
